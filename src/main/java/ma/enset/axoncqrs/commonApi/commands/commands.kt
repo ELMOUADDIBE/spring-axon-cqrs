@@ -1,5 +1,6 @@
 package ma.enset.axoncqrs.commonApi.commands
 
+import ma.enset.axoncqrs.commonApi.enums.AccountStatus
 import org.axonframework.modelling.command.TargetAggregateIdentifier
 
 
@@ -11,7 +12,8 @@ abstract class BaseCommand<T>(
 data class CreateAccountCommand(
     override val id: String,
     val balance: Double,
-    val currency: String
+    val currency: String,
+    val status: AccountStatus
 ) : BaseCommand<String>(id)
 
 data class UpdateAccountCommand(

@@ -10,7 +10,8 @@ abstract class BaseEvent<T>(
 data class AccountCreatedEvent(
     override val id: String,
     val balance: Double,
-    val currency: String
+    val currency: String,
+    val status: AccountStatus
 ) : BaseEvent<String>(id)
 
 data class UpdateAccountCommand(

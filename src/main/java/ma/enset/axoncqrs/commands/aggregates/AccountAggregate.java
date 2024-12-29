@@ -33,7 +33,8 @@ public class AccountAggregate {
         AggregateLifecycle.apply(new AccountCreatedEvent(
                 command.getId(),
                 command.getBalance(),
-                command.getCurrency()
+                command.getCurrency(),
+                AccountStatus.CREATED
         ));
     }
 
